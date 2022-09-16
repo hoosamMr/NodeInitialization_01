@@ -6,7 +6,15 @@ namespace NodeInitialization_01
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            
+            Node<int> node = Node<int>.intNode("1 2 3 4 5"); ;
+            
+            Node<int>.printNode(node);
+            Console.WriteLine($"the length of the node is: {node.gitIntNodeCounter()}");
+            Console.ReadKey();
         }
+      
+
     }
 }
+ 
