@@ -19,9 +19,8 @@ namespace NodeInitialization_01
         public Node(T val)
         {
             if(val is int)
-            {
-              intNodeCounter++;
-            }
+                intNodeCounter++;
+
             if (val is string)
                 stringNodeConter++;
 
@@ -43,6 +42,25 @@ namespace NodeInitialization_01
             
         }
         public int gitIntNodeCounter() => intNodeCounter;
+        public int gitStrNodeCounter() => stringNodeConter;
+        public static Node<string> stringNode(string input)
+        {
+            Node<string> node = null;
+            string str = "";
+            for(int i = input.Length-1; i >= 0; i--)
+            {
+                if(input[i] != ' ')
+                    str= input[i] +str;
+
+                if (input[i]==' ' || i==0)
+                {
+                    node = new Node<string>(str, node);
+                    str = "";
+                }
+                
+            }
+            return node;
+        }
         public static Node<int> intNode(string str)
         {
             Node<int> node = null;
