@@ -93,7 +93,17 @@ namespace NodeInitialization_01
             }
             Console.WriteLine("null");
         }
+        public void Print()
+        {
+            Node<T> current = this;
+            while(current != null)
+            {
+                Console.Write($"{current.val} -> ");
+                current = current.Next;
+            }
+            if(current==null) Console.WriteLine("null");
 
+        }
         public override string ToString()
         {
             return $"{val} -> ";
